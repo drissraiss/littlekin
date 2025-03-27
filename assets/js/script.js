@@ -38,10 +38,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Handle mouse movement
-    const handle_mouse_move = e => update_slider_position(e.pageX)
-    
+    const handle_mouse_move = (e) => update_slider_position(e.pageX);
+
     // Handle touch movement
-    const handle_touch_move = e =>update_slider_position(e.touches[0].pageX);
+    const handle_touch_move = (e) => update_slider_position(e.touches[0].pageX);
 
     // Mouse events
     handle_slider.addEventListener("mousedown", (e) => {
@@ -61,6 +61,81 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.addEventListener("touchend", () => {
       document.removeEventListener("touchmove", handle_touch_move);
+    });
+  }
+
+  /* Frequently Asked Questions */
+  const faq = document.querySelector(".faq");
+  if (faq) {
+    let questions_faq = faq.querySelectorAll(".faq__questions .faq__item");
+    questions_faq.forEach((e) => {
+      e.addEventListener("click", function () {
+        if (this.classList.contains("faq__item--active")) return this.classList.remove("faq__item--active");
+        questions_faq.forEach((item) => {
+          if (item == e) {
+            this.classList.add("faq__item--active");
+          } else {
+            item.classList.remove("faq__item--active");
+          }
+        });
+      });
+    });
+  }
+
+  /* Timeline Section */
+  const timeline = document.querySelector(".timeline");
+  const timeline_years = document.querySelectorAll(".timeline__years__item");
+  const timeline_items = document.querySelectorAll(".timeline__item");
+  const timeline_btn_prev = document.querySelector(".timeline__years__prev");
+  const timeline_btn_next = document.querySelector(".timeline__years__next");
+  const update_timeline = (item_index) => {
+    for (let index = 0; index < timeline_years.length; index++) {
+      if (index == item_index) {
+        timeline_years[index].classList.add("timeline__years__item--active");
+        timeline_items[index].classList.add("timeline__item--active");
+      } else {
+        timeline_years[index].classList.remove("timeline__years__item--active");
+        timeline_items[index].classList.remove("timeline__item--active");
+      }
+    }
+  };
+  const get_current_index_active = () => {
+    return Array.from(timeline_years).findIndex((element) => element.classList.contains("timeline__years__item--active"));
+  };
+  if (timeline && timeline_years.length) {
+    timeline_years.forEach((year, index) => {
+      year.addEventListener("click", () => {
+        update_timeline(index);
+      });
+    });
+    timeline_btn_prev.addEventListener("click", () => {
+      var current_index = get_current_index_active();
+      var constrained_index;
+      if (current_index != undefined) {
+        if (current_index <= 0) {
+          constrained_index = timeline_years.length - 1;
+        } else if (current_index > timeline_years.length - 1) {
+          constrained_index = 0;
+        } else {
+          constrained_index = current_index - 1;
+        }
+        update_timeline(constrained_index);
+      }
+    });
+
+    timeline_btn_next.addEventListener("click", () => {
+      var current_index = get_current_index_active();
+      var constrained_index;
+      if (current_index != undefined) {
+        if (current_index < 0) {
+          constrained_index = timeline_years.length - 1;
+        } else if (current_index >= timeline_years.length - 1) {
+          constrained_index = 0;
+        } else {
+          constrained_index = current_index + 1;
+        }
+        update_timeline(constrained_index);
+      }
     });
   }
 });
