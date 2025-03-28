@@ -138,4 +138,22 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+  /* Spotlight */
+  var spotlight_product_cards = document.querySelectorAll(".spotlight__product");
+  spotlight_product_cards.forEach((item) => {
+    var percentage_x = parseInt(item.style.left);
+    var percentage_y = parseInt(item.style.top);
+    var translate_x = 5;
+    var translate_y = -105;
+    if (percentage_x > 50 && percentage_y > 50) {
+      translate_x = -95;
+    } else if (percentage_x > 50 && percentage_y < 50) {
+      translate_x = -95;
+      translate_y = 45;
+    } else if (percentage_x < 50 && percentage_y < 50) {
+      translate_y = 45;
+    }
+    item.querySelector(".spotlight__product__card").style.transform = `translate(${translate_x}%, ${translate_y}%)`;
+  });
 });
