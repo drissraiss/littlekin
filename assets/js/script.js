@@ -156,4 +156,21 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     item.querySelector(".spotlight__product__card").style.transform = `translate(${translate_x}%, ${translate_y}%)`;
   });
+
+  /* Back to Top button */
+  const back_to_top_button = document.querySelector('#back-to-top')
+  if(back_to_top_button){
+    document.addEventListener("scroll", () => {
+      if(window.scrollY >= 1000){
+        back_to_top_button.classList.add('back-to-top--active')
+      }else {
+        back_to_top_button.classList.remove('back-to-top--active')
+      }
+    })
+    back_to_top_button.addEventListener('click', () => {
+      window.scrollTo({
+        top:0
+      })
+    })
+  }
 });
