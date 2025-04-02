@@ -1,4 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
+  /* Pre Header Language Selector  */
+  let language_selector = document.querySelector(".pre-header__language-selector");
+  const handle_click_outside_selector = () => {
+    language_selector.classList.remove("pre-header__language-selector--active");
+    document.removeEventListener("click", handle_click_outside_selector);
+  };
+  if (language_selector) {
+    language_selector.addEventListener("click", function (event) {
+      event.stopPropagation();
+      this.classList.add("pre-header__language-selector--active");
+      document.addEventListener("click", handle_click_outside_selector);
+    });
+  }
+
   /* Hero Section */
   var hero__swiper = new Swiper(".hero__swiper", {
     loop: true,
@@ -10,12 +24,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* Top Category section */
   var category_section__swiper = new Swiper(".category-section__swiper", {
-    slidesPerView: 4,
     spaceBetween: 14,
-    loop: true,
+    slidesPerView: 4,
+    loop: true, 
+    freeMode: true, 
     navigation: {
       nextEl: ".category-section__button-next",
       prevEl: ".category-section__button-prev",
+    },
+    pagination: {
+      el: ".category-section__swiper__pagination",
+      clickable: true,
     },
   });
 
@@ -158,19 +177,19 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* Back to Top button */
-  const back_to_top_button = document.querySelector('#back-to-top')
-  if(back_to_top_button){
+  const back_to_top_button = document.querySelector("#back-to-top");
+  if (back_to_top_button) {
     document.addEventListener("scroll", () => {
-      if(window.scrollY >= 1000){
-        back_to_top_button.classList.add('back-to-top--active')
-      }else {
-        back_to_top_button.classList.remove('back-to-top--active')
+      if (window.scrollY >= 1000) {
+        back_to_top_button.classList.add("back-to-top--active");
+      } else {
+        back_to_top_button.classList.remove("back-to-top--active");
       }
-    })
-    back_to_top_button.addEventListener('click', () => {
+    });
+    back_to_top_button.addEventListener("click", () => {
       window.scrollTo({
-        top:0
-      })
-    })
+        top: 0,
+      });
+    });
   }
 });
