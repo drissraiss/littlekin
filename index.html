@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="./assets/css/style.css">
   <title>LITTLEKIN</title>
@@ -45,7 +45,7 @@
               <span>Shop</span>
             </a>
           </li>
-          <li class="header__nav__list__item">
+          <li class="header__nav__list__item" data-index="1">
             <a href="" title="Products">
               <span>Products</span>
               <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -66,10 +66,44 @@
             </a>
           </li>
         </ul>
-        <!--  -->
+        <!-- Mobile Menu -->
         <span class="header__menu-hamburger">
           <img src="/assets/icon/menu-hamburger.svg" class="header__menu-hamburger__img" alt="Menu" title="Menu">
         </span>
+        <div class="header__nav__list__mobile">
+          <span class="header__nav__list__mobile__close">
+            <img src="/assets/icon/close.svg" alt="Close" title="Close">
+          </span>
+          <ul class="header__nav__list__mobile__list">
+            <li class="header__nav__list__mobile__item">
+              <div><a href="">Home</a></div>
+            </li>
+            <li class="header__nav__list__mobile__item">
+              <div><a href="">Shop</a></div>
+            </li>
+            <li class="header__nav__list__mobile__item">
+              <div>
+                <a href="">Products</a>
+                <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M4.90909 8.1598L4 8.1598L0.272727 0.84162L1.72727 0.84162L4.43182 6.45526L4.34091 6.4098L4.56818 6.4098L4.47727 6.45526L7.18182 0.84162L8.63636 0.84162L4.90909 8.1598Z"
+                    fill="#444444"></path>
+                </svg>
+              </div>
+              <ul class="header__nav__list__mobile__item__sub-list">
+                <li class="header__nav__list__mobile__item__sub-list__item"><a href="">Top Sellings</a></li>
+                <li class="header__nav__list__mobile__item__sub-list__item"><a href="">New Arrivals</a></li>
+                <li class="header__nav__list__mobile__item__sub-list__item"><a href="">Best Toys</a></li>
+              </ul>
+            </li>
+            <li class="header__nav__list__mobile__item">
+              <div><a href="">Toys</a></div>
+            </li>
+            <li class="header__nav__list__mobile__item">
+              <div><a href="">Clothes</a></div>
+            </li>
+          </ul>
+        </div>
       </nav>
 
       <div class="header__logo">
@@ -104,8 +138,92 @@
           </li>
         </ul>
       </div>
-
     </div>
+
+    <!-- Mega Menu -->
+    <div class="header__mega-menu" data-index="1">
+      <div class="header__mega-menu__container">
+        <ul class="header__mega-menu__list">
+          <li class="header__mega-menu__list__item">
+            <a href="" class="header__mega-menu__list__item__title">Top Sellings</a>
+            <ul class="header__mega-menu__list__item__sub-list">
+              <li class="header__mega-menu__list__item__sub-list__item"><a href="">Black Co-ord set</a></li>
+              <li class="header__mega-menu__list__item__sub-list__item"><a href="">Denim Jean</a></li>
+              <li class="header__mega-menu__list__item__sub-list__item"><a href="">High rise shorts with top</a></li>
+              <li class="header__mega-menu__list__item__sub-list__item"><a href="">Samantha Activewear</a></li>
+            </ul>
+          </li>
+          <li class="header__mega-menu__list__item">
+            <a href="" class="header__mega-menu__list__item__title">New Arrivals</a>
+            <ul class="header__mega-menu__list__item__sub-list">
+              <li class="header__mega-menu__list__item__sub-list__item"><a href="">Samantha Activewear</a></li>
+              <li class="header__mega-menu__list__item__sub-list__item"><a href="">Noya Slim Dress</a></li>
+              <li class="header__mega-menu__list__item__sub-list__item"><a href="">Shorte with back</a></li>
+              <li class="header__mega-menu__list__item__sub-list__item"><a href="">Jelna Split Dress</a></li>
+            </ul>
+          </li>
+          <li class="header__mega-menu__list__item">
+            <a href="" class="header__mega-menu__list__item__title">Best Toys</a>
+            <ul class="header__mega-menu__list__item__sub-list">
+              <li class="header__mega-menu__list__item__sub-list__item"><a href="">Jelna Split Dress</a></li>
+              <li class="header__mega-menu__list__item__sub-list__item"><a href="">Noya Slim Dress</a></li>
+              <li class="header__mega-menu__list__item__sub-list__item"><a href="">Samantha Activewear</a></li>
+              <li class="header__mega-menu__list__item__sub-list__item"><a href="">Twilight Whisper Skirt</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="header__mega-menu__categories slider-drs">
+          <li class="header__mega-menu__category">
+            <a href="" title="Clothes">
+              <img src="/assets/img/clothes.jpg" alt="Clothes" class="header__mega-menu__category__img" title="Clothes">
+              <div class="header__mega-menu__category__overlay">
+                <span class="header__mega-menu__category__overlay__title">Clothes</span>
+                <span class="header__mega-menu__category__overlay__nb-items">45 item</span>
+              </div>
+            </a>
+          </li>
+          <li class="header__mega-menu__category">
+            <a href="" title="Bed">
+              <img src="/assets/img/bed.jpg" alt="Bed" class="header__mega-menu__category__img" title="Bed">
+              <div class="header__mega-menu__category__overlay">
+                <span class="header__mega-menu__category__overlay__title">Bed</span>
+                <span class="header__mega-menu__category__overlay__nb-items">45 item</span>
+              </div>
+            </a>
+          </li>
+          <li class="header__mega-menu__category">
+            <a href="" title="Toys">
+              <img src="/assets/img/toys.jpg" alt="Toys" class="header__mega-menu__category__img" title="Toys">
+              <div class="header__mega-menu__category__overlay">
+                <span class="header__mega-menu__category__overlay__title">Toys</span>
+                <span class="header__mega-menu__category__overlay__nb-items">34 item</span>
+              </div>
+            </a>
+          </li>
+          <li class="header__mega-menu__category">
+            <a href="" title="Girls">
+              <img src="/assets/img/girls.jpg" alt="Girls" class="header__mega-menu__category__img" title="Girls">
+              <div class="header__mega-menu__category__overlay">
+                <span class="header__mega-menu__category__overlay__title">Girls</span>
+                <span class="header__mega-menu__category__overlay__nb-items">45 item</span>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Form search  -->
+    <div class="header__search-form">
+      <div class="header__search-form__container">
+        <form action="" method="get" class="header__search-form__form">
+          <input type="text" name="search" class="header__search-form__input" id="search" placeholder="Search for products..." required>
+          <button type="submit" class="header__search-form__btn">
+            <img src="/assets/icon/search.svg" alt="Search icon" title="Search">
+          </button>
+        </form>
+      </div>
+
   </header>
 
   <!-- Main content -->
@@ -163,9 +281,9 @@
             </div>
           </div>
         </div>
-        <div class="category-section__content swiper category-section__swiper">
-          <ul class="category-list swiper-wrapper">
-            <li class="category-list__item swiper-slide">
+        <div class="category-section__content category-section__swiper">
+          <ul class="category-list slider-drs">
+            <li class="category-list__item">
               <a href="" class="category-card">
                 <div class="category-card__top">
                   <img src="/assets/img/category-1.jpg" alt="Bed" title="Bed" class="category-card__image">
@@ -173,7 +291,7 @@
                 <h3 class="category-card__title">Bed</h3>
               </a>
             </li>
-            <li class="category-list__item swiper-slide">
+            <li class="category-list__item">
               <a href="" class="category-card">
                 <div class="category-card__top">
                   <img src="/assets/img/category-2.jpg" alt="Toys" title="Toys" class="category-card__image">
@@ -181,7 +299,7 @@
                 <h3 class="category-card__title">Toys</h3>
               </a>
             </li>
-            <li class="category-list__item swiper-slide">
+            <li class="category-list__item">
               <a href="" class="category-card">
                 <div class="category-card__top">
                   <img src="/assets/img/category-3.jpg" alt="Clothes" title="Clothes" class="category-card__image">
@@ -189,7 +307,7 @@
                 <h3 class="category-card__title">Clothes</h3>
               </a>
             </li>
-            <li class="category-list__item swiper-slide">
+            <li class="category-list__item">
               <a href="" class="category-card">
                 <div class="category-card__top">
                   <img src="/assets/img/category-4.jpg" alt="Products" title="Products" class="category-card__image">
@@ -197,7 +315,7 @@
                 <h3 class="category-card__title">Products</h3>
               </a>
             </li>
-            <li class="category-list__item swiper-slide">
+            <li class="category-list__item">
               <a href="" class="category-card">
                 <div class="category-card__top">
                   <img src="/assets/img/category-5.jpg" alt="Onesie" title="Onesie" class="category-card__image">
@@ -205,7 +323,7 @@
                 <h3 class="category-card__title">Onesie</h3>
               </a>
             </li>
-            <li class="category-list__item swiper-slide">
+            <li class="category-list__item">
               <a href="" class="category-card">
                 <div class="category-card__top">
                   <img src="/assets/img/category-6.jpg" alt="rattles" title="rattles" class="category-card__image">
@@ -213,7 +331,7 @@
                 <h3 class="category-card__title">rattles</h3>
               </a>
             </li>
-            <li class="category-list__item swiper-slide">
+            <li class="category-list__item">
               <a href="" class="category-card">
                 <div class="category-card__top">
                   <img src="/assets/img/category-7.jpg" alt="Ponny" title="Ponny" class="category-card__image">
@@ -221,7 +339,7 @@
                 <h3 class="category-card__title">Ponny</h3>
               </a>
             </li>
-            <li class="category-list__item swiper-slide">
+            <li class="category-list__item">
               <a href="" class="category-card">
                 <div class="category-card__top">
                   <img src="/assets/img/category-8.jpg" alt="Suspender" title="Suspender" class="category-card__image">
@@ -242,7 +360,7 @@
           <h2 class="section__title">Deal of the day</h2>
         </div>
         <div class="best-prds__content">
-          <ul class="prds-list">
+          <ul class="prds-list slider-drs">
             <li class="prds-list__item">
               <div class="prds-card">
                 <a href="">
@@ -422,7 +540,7 @@
           <h2 class="section__title">Discover interesting things here</h2>
         </div>
         <div class="brand-gallery__content">
-          <ul class="brand-gallery__list">
+          <ul class="brand-gallery__list slider-drs">
             <li class="brand-gallery__list__item">
               <a href="" class="brand-gallery__list__item__card" title="Brand 1">
                 <img src="/assets/img/img-brand-1.jpg" alt="Brand 1" title="Brand 1">
@@ -684,7 +802,7 @@
         </div>
       </div>
       <div class="spotlight__content">
-        <div class="spotlight__list">
+        <div class="spotlight__list slider-drs">
           <div class="spotlight__item">
             <img src="/assets/img/spotlight-img-1.jpg" alt="Baby" title="Baby" class="spotlight__item__img">
             <!-- Products cart -->
@@ -805,7 +923,7 @@
           <h2 class="section__title">Tag us on @littlekin</h2>
         </div>
       </div>
-      <div class="instagram__content">
+      <div class="instagram__content slider-drs">
         <div class="instagram__image">
           <a href="" title="Instagram">
             <img src="/assets/img/instagram-img-1.jpg" class="instagram__img" alt="Instagrame" title="Instagram">
