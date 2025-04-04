@@ -812,7 +812,12 @@ img {
   .header__search-form__container {
     padding: 0 var(--padding-responsive, 20px);
   }
-  
+}
+
+@media (max-width: 700px) {
+  .header__search-form {
+    display: none;
+  }
 }
 /* main */
 
