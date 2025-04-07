@@ -25,7 +25,7 @@
         <ul class="pre-header__language-selector__dropdown">
           <li><a href="" class="active" title="English">English</a></li>
           <li><a href="" title="Arabe">Arabe</a></li>
-          <li><a href="" title="English">English</a></li>
+          <li><a href="" title="Français">Français</a></li>
         </ul>
       </div>
     </div>
@@ -74,6 +74,24 @@
           <span class="header__nav__list__mobile__close">
             <img src="/assets/icon/close.svg" alt="Close" title="Close">
           </span>
+          <div class="mobile__search-form_wishlist">
+            <div class="mobile__search-form">
+              <form action="" method="get" class="mobile__search-form__form">
+                <input type="text" name="search" class="mobile__search-form__input" id="search"
+                  placeholder="Search for products..." required>
+                <button type="submit" class="mobile__search-form__btn">
+                  <img src="/assets/icon/search.svg" alt="Search icon" title="Search">
+                </button>
+              </form>
+            </div>
+            <div class="mobile__favorite">
+              <a href="" class="mobile__favorite__icon" title="Wishlist">
+                <img src="/assets/icon/favorite.svg" alt="Favorite icon" title="Favorites">
+                <span class="header__icons__counter">2</span>
+              </a>
+            </div>
+          </div>
+
           <ul class="header__nav__list__mobile__list">
             <li class="header__nav__list__mobile__item">
               <div><a href="">Home</a></div>
@@ -103,6 +121,22 @@
               <div><a href="">Clothes</a></div>
             </li>
           </ul>
+          <div class="mobile__additional">
+            <!-- Language Selecy Mobile -->
+            <div class="mobile__language-selector">
+              <ul class="mobile__language-selector__dropdown">
+                <li><a href="" class="active" title="English">English</a></li>
+                <li><a href="" title="Arabe">Arabe</a></li>
+                <li><a href="" title="Français">Français</a></li>
+              </ul>
+              <div class="mobile__language-selector__current-language">
+                <span>English</span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17 9L12 14L7 9" stroke="#313131" stroke-width="2" />
+                </svg>
+              </div>
+            </div>
+          </div>
         </div>
       </nav>
 
@@ -217,7 +251,8 @@
     <div class="header__search-form">
       <div class="header__search-form__container">
         <form action="" method="get" class="header__search-form__form">
-          <input type="text" name="search" class="header__search-form__input" id="search" placeholder="Search for products..." required>
+          <input type="text" name="search" class="header__search-form__input" id="search"
+            placeholder="Search for products..." required>
           <button type="submit" class="header__search-form__btn">
             <img src="/assets/icon/search.svg" alt="Search icon" title="Search">
           </button>
@@ -268,9 +303,9 @@
     <section class="category-section">
       <div class="category-section__container">
         <div class="category-section__header">
-          <span class="section__subtitle">Top Category</span>
+          <span class="section__subtitle">Most Loved</span>
           <div class="section__custom-title">
-            <h2 class="section__title">For your lovely baby</h2>
+            <h2 class="section__title">Gentle care always</h2>
             <div class="category-section__navigation">
               <span class="category-section__button-prev">
                 <img src="/assets/icon/right_row.svg" alt="Previous" title="Previous">
@@ -965,10 +1000,22 @@
         <div class="footer__contact-us">
           <div class="footer__title">Contact Us</div>
           <ul class="footer__contact-us__content">
-            <li class="footer__contact-us__email">Support@littelkin.com</li>
-            <li class="footer__contact-us__tel">Tele +212 5 37 88 34 45</li>
-            <li class="footer__contact-us__address">Address : 123 Rue EL NAKHIL, Quartier Medina, Marrakech, 40000,
-              Morocco</li>
+            <li class="footer__contact-us__email">
+              <a href="mailto:support@littelkin.com">
+                Support@littelkin.com
+              </a>
+            </li>
+            <li class="footer__contact-us__tel">
+              <a href="tel:+212537883445">
+                Tele : +212 5 37 88 34 45
+              </a>
+            </li>
+            <li class="footer__contact-us__address">
+              <a
+                href="https://www.google.com/maps/place/Hotel+Nakhil/@31.6353481,-7.9994,627m/data=!3m2!1e3!4b1!4m6!3m5!1s0xdafee640d89f1b1:0x3381c40a7a666d0f!8m2!3d31.6353436!4d-7.9968251!16s%2Fg%2F11g70x4647?entry=ttu&g_ep=EgoyMDI1MDQwMS4wIKXMDSoASAFQAw%3D%3D">
+                Address : 123 Rue EL NAKHIL, Quartier Medina, Marrakech, 40000,Morocco
+              </a>
+            </li>
           </ul>
         </div>
         <div class="footer__linklist">

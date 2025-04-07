@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (language_selector) {
     language_selector.addEventListener("click", function (event) {
       event.stopPropagation();
-      this.classList.add("pre-header__language-selector--active");
+      this.classList.toggle("pre-header__language-selector--active");
       document.addEventListener("click", handle_click_outside_selector);
     });
   }
@@ -72,10 +72,10 @@ document.addEventListener("DOMContentLoaded", () => {
   function handle_touche_end(event) {
     touche_end_x = event.changedTouches[0].clientX;
 
-    if (touche_start_x - touche_end_x > 50 ) {
+    if (touche_start_x - touche_end_x > 50) {
       hide_mobile_menu();
     }
-    
+
     if (touche_end_x - touche_start_x > 100 && touche_start_x < 20) {
       show_mobile_menu();
     }
@@ -83,11 +83,26 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("touchstart", handle_touche_start);
   document.addEventListener("touchend", handle_touche_end);
 
+  /* Mobile Language Selector */
+  let mobile_language_selector = document.querySelector(".mobile__language-selector");
+  const handle_click_outside_mobile_selector = () => {
+    mobile_language_selector.classList.remove("mobile__language-selector--active");
+    document.removeEventListener("click", handle_click_outside_mobile_selector);
+  };
+
+  if (mobile_language_selector) {
+    mobile_language_selector.addEventListener("click", function (event) {
+      event.stopPropagation();
+      this.classList.toggle("mobile__language-selector--active");
+      document.addEventListener("click", handle_click_outside_mobile_selector);
+    });
+  }
+
   /* Search Form */
   let search_form_icon = document.querySelector(".header__icon-search");
   let search_form = document.querySelector(".header__search-form__form");
 
-  if(search_form_icon) {
+  if (search_form_icon) {
     search_form_icon.addEventListener("mouseenter", function () {
       if (search_form) {
         search_form.classList.add("header__search-form__form--active");
