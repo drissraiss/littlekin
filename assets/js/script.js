@@ -285,6 +285,22 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     item.querySelector(".spotlight__product__card").style.transform = `translate(${translate_x}%, ${translate_y}%)`;
   });
+  // Spotlight pagination
+  let spotlight__pagination__bullets = document.querySelectorAll(".spotlight__pagination__bullet");
+  let spotlight__list__items = document.querySelectorAll(".spotlight__item");
+
+  spotlight__pagination__bullets.forEach((bullet, index) => {
+    bullet.addEventListener("click", () => {
+      spotlight__pagination__bullets.forEach((item) => {
+        item.classList.remove("spotlight__pagination__bullet--active");
+      });
+      bullet.classList.add("spotlight__pagination__bullet--active");
+      spotlight__list__items[index].scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+    });
+  });
 
   /* Back to Top button */
   const back_to_top_button = document.querySelector("#back-to-top");
